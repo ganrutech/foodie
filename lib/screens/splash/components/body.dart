@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../size_config.dart';
 import 'splash_page_one.dart';
+import 'splash_page_three.dart';
+import 'splash_page_two.dart';
+
+import '../../home/home_screen.dart';
 
 class Body extends StatefulWidget {
   const Body({Key key}) : super(key: key);
@@ -14,9 +18,13 @@ class _BodyState extends State<Body> {
   final PageController pageController =
       PageController(initialPage: 0, keepPage: true);
 
-  void updatePage() {
+  void nextPageHandler() {
     pageController.nextPage(
         duration: Duration(milliseconds: 500), curve: Curves.ease);
+  }
+
+  void skipIntroHandler() {
+    Navigator.pushReplacementNamed(context, HomeScreen.routeName);
   }
 
   @override
@@ -32,9 +40,9 @@ class _BodyState extends State<Body> {
           });
         },
         children: [
-          SplashPageOne(press: updatePage),
-          Center(child: Text('Second Page')),
-          Center(child: Text('Third Page')),
+          SplashPageOne(press: nextPageHandler),
+          SplashPageTwo(press: skipIntroHandler),
+          SplashPageThree(press: skipIntroHandler),
         ],
       ),
     );

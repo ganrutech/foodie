@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/splash/splash_screen.dart';
+import 'routes.dart';
 
 import 'theme.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Foodie',
       theme: theme(),
       home: SplashScreen(),
+      routes: routes,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../components/bullet_dots.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -12,6 +13,7 @@ class SplashPageOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       overflow: Overflow.clip,
+      alignment: AlignmentDirectional.center,
       children: [
         Positioned(
           bottom: 0,
@@ -35,16 +37,28 @@ class SplashPageOne extends StatelessWidget {
                 Text(
                   'Welcome to Foodie',
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline5.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headline4.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 0.7),
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: 10),
+                Text(
+                  'People who love to eat are always \nthe best people',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    letterSpacing: 0.7,
+                    color: Colors.white,
+                    height: 1.2,
+                  ),
+                ),
+                SizedBox(height: 50),
                 RaisedButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   onPressed: press,
-                  textColor: kTextBlack,
+                  textColor: Colors.black87,
                   child: Container(
                     width: SizeConfig.screenWidth * 0.4,
                     padding: EdgeInsets.all(getProportionateScreenWidth(16.0)),
@@ -65,22 +79,30 @@ class SplashPageOne extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 50),
-                Container(
-                  width: 12,
-                  height: 12,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: kPrimaryLightColor),
-                ),
               ],
             ),
           ),
         ),
-        Align(
-          widthFactor: 0.3,
-          heightFactor: 1.1,
-          child: Image.asset('assets/images/plate.png', width: 280),
+        Positioned(
+          top: 0,
+          left: 0,
+          child: Align(
+            widthFactor: 0.3,
+            heightFactor: 1.1,
+            child: Image.asset('assets/images/plate.png', width: 280),
+          ),
         ),
+        Positioned(
+          bottom: 50,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BulletPoints(width: 15, height: 15, color: kPrimaryLightColor),
+              BulletPoints(width: 12, height: 12),
+              BulletPoints(width: 12, height: 12),
+            ],
+          ),
+        )
       ],
     );
   }
