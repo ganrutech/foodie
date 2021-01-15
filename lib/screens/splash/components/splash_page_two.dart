@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../components/bullet_dots.dart';
 
 import '../../../size_config.dart';
 import '../../../constants.dart';
@@ -38,7 +37,7 @@ class SplashPageTwo extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
                 width: SizeConfig.screenWidth * 0.8,
-                height: 400,
+                height: SizeConfig.screenHeight * 0.60,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(
                     Radius.circular(20.0),
@@ -48,31 +47,76 @@ class SplashPageTwo extends StatelessWidget {
                     image: AssetImage('assets/images/map_placeholder.png'),
                   ),
                 ),
-                child: Icon(
-                  Icons.room,
-                  size: 50,
-                  color: Colors.redAccent[400],
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 180,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              // color: Colors.red,
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/plate.png'),
+                                fit: BoxFit.fitHeight,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Home Cooking',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: getProportionateScreenWidth(12.0),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  ...List.generate(
+                                    4,
+                                    (index) => Icon(
+                                      Icons.star,
+                                      color: Colors.yellow,
+                                      size: 10,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Text(
+                                'Opened',
+                                style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: getProportionateScreenWidth(12.0),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    Icon(
+                      Icons.room,
+                      size: 50,
+                      color: Colors.redAccent[400],
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
-          Positioned(
-            bottom: 50,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                BulletPoints(
-                    width: 12,
-                    height: 12,
-                    color: Theme.of(context).primaryColor),
-                BulletPoints(
-                    width: 15,
-                    height: 15,
-                    color: Theme.of(context).primaryColor),
-                BulletPoints(width: 12, height: 12),
-              ],
-            ),
-          )
         ],
       ),
     );

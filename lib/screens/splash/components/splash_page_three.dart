@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../components/bullet_dots.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -49,7 +48,7 @@ class SplashPageThree extends StatelessWidget {
                   topLeft: Radius.circular(50.0),
                   topRight: Radius.circular(50.0),
                 ),
-                color: Theme.of(context).primaryColor.withOpacity(0.5),
+                color: Theme.of(context).primaryColor.withOpacity(0.6),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -88,29 +87,6 @@ class SplashPageThree extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 50,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                BulletPoints(
-                  width: 12,
-                  height: 12,
-                  color: Theme.of(context).primaryColor,
-                ),
-                BulletPoints(
-                  width: 12,
-                  height: 12,
-                  color: Theme.of(context).primaryColor,
-                ),
-                BulletPoints(
-                  width: 15,
-                  height: 15,
-                  color: Theme.of(context).primaryColor,
-                ),
-              ],
-            ),
-          )
         ],
       ),
     );
