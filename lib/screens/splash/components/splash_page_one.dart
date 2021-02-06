@@ -56,8 +56,8 @@ class SplashPageOne extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
-                  onPressed: press,
                   textColor: Colors.black87,
+                  onPressed: press,
                   child: Container(
                     width: SizeConfig.screenWidth * 0.4,
                     padding: EdgeInsets.all(getProportionateScreenWidth(16.0)),

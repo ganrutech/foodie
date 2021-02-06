@@ -41,6 +41,7 @@ class _BodyState extends State<Body> {
         alignment: AlignmentDirectional.center,
         children: [
           PageView(
+            // physics: NeverScrollableScrollPhysics(),
             controller: pageController,
             onPageChanged: (value) {
               setState(() {

@@ -28,7 +28,6 @@ class OnBoarding with ChangeNotifier {
   Future<void> logout() async {
     _visited = null;
     notifyListeners();
-
     final prefs = await SharedPreferences.getInstance();
     prefs.clear();
   }

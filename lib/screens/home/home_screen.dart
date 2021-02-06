@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Home Page'),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   Provider.of<OnBoarding>(context, listen: false).logout();
                 },
