@@ -1,29 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../../providers/onboarding.dart';
+
+import '../../size_config.dart';
+import '../../components/custom_botton_bar.dart';
+import 'components/body.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = '/home';
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Home Page'),
-              ElevatedButton(
-                onPressed: () {
-                  Provider.of<OnBoarding>(context, listen: false).logout();
-                },
-                child: Text('Clear Data'),
-              )
-            ],
-          ),
-        ),
-      ),
+      body: Body(),
+      bottomNavigationBar: CustomBottomNav(),
     );
   }
 }

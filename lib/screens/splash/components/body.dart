@@ -34,7 +34,8 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      color: Colors.white,
       width: SizeConfig.screenWidth,
       height: SizeConfig.screenHeight,
       child: Stack(

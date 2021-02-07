@@ -25,7 +25,7 @@ class SplashPageOne extends StatelessWidget {
                 topLeft: Radius.circular(50.0),
                 topRight: Radius.circular(50.0),
               ),
-              color: Theme.of(context).primaryColor.withOpacity(0.6),
+              color: Theme.of(context).primaryColor.withOpacity(0.7),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

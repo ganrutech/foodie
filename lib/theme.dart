@@ -23,12 +23,12 @@ Map<int, Color> color = {
 
 ThemeData theme() {
   return ThemeData(
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: kPrimaryColor,
     textTheme: textTheme(),
     primaryColor: kPrimaryColor,
     primarySwatch: MaterialColor(0xFF8F8CDE, color),
     accentColor: kPrimaryColor,
-    fontFamily: 'Helvetica',
+    fontFamily: 'Poppins',
     visualDensity: VisualDensity.adaptivePlatformDensity,
     buttonColor: kSecondaryColor,
   );
@@ -39,5 +39,6 @@ TextTheme textTheme() {
     bodyText1: TextStyle(color: kTextBlack),
     bodyText2: TextStyle(color: kTextBlack),
     button: TextStyle(color: kTextBlack),
+    headline6: TextStyle(color: kTextBlackLight),
   );
 }
