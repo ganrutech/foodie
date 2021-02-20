@@ -9,5 +9,6 @@ const kTextBlackLight = Color(0xFFF383838);
 const kTextGrey = Color(0xFFFC3C3C3);
 const kTextLight = Color(0xFFFFCFCFC);
 const kCardBgGrey = Color(0xFFF2F2F2);
+const kBadgeColor = Color(0xFF716F86);
 
 const kAnimationDuration = Duration(milliseconds: 200);

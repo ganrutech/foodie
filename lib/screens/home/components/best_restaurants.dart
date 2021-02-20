@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../size_config.dart';
+import '../../../components/rating_badge.dart';
 
+import '../../../size_config.dart';
 import '../../../constants.dart';
 
 class BestRestaurant extends StatelessWidget {
@@ -16,9 +17,9 @@ class BestRestaurant extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            SizedBox(width: 20),
+            SizedBox(width: kDefaultValue),
             ...List.generate(
-              3,
+              8,
               (index) => Padding(
                 padding: const EdgeInsets.only(right: kDefaultValue / 2),
                 child: SizedBox(
@@ -43,9 +44,51 @@ class BestRestaurant extends StatelessWidget {
                           Container(
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomCenter,
                                 colors: [
-                                  Colors.black87.withOpacity(0.08),
-                                  Colors.black87.withOpacity(0.08),
+                                  Colors.black87.withOpacity(0.1),
+                                  Colors.black87.withOpacity(0.1),
+                                  Colors.black87.withOpacity(0.3),
+                                  Colors.black87.withOpacity(0.8),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: RatingBadge(),
+                          ),
+                          Positioned(
+                            bottom: 15,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: kDefaultValue),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      RestaurantTags(text: 'Multicusian'),
+                                      RestaurantTags(text: 'Fast Food'),
+                                    ],
+                                  ),
+                                  SizedBox(height: 5),
+                                  Text(
+                                    'Ambur Star Biriyani',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Friends were here',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: kTextGrey,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  )
                                 ],
                               ),
                             ),
@@ -59,6 +102,40 @@ class BestRestaurant extends StatelessWidget {
             ),
             SizedBox(width: 10),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class RestaurantTags extends StatelessWidget {
+  const RestaurantTags({
+    Key key,
+    @required this.text,
+  }) : super(key: key);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(right: 5),
+      padding: const EdgeInsets.symmetric(horizontal: kDefaultValue / 3),
+      height: 20,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(kDefaultValue / 3),
+        ),
+        color: kBadgeColor,
+      ),
+      child: Center(
+        child: Text(
+          text.toUpperCase(),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 9,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
     );
