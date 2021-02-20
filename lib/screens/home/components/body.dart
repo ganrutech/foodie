@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../../../components/container_title.dart';
 
+import 'best_foods_near_you.dart';
 import 'best_restaurants.dart';
 import 'categories_list.dart';
 import 'custom_appbar.dart';
@@ -20,19 +20,18 @@ class Body extends StatelessWidget {
         child: Container(
           color: Colors.white,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomAppBar(),
               WelcomeWidget(),
               SearchAndFilter(),
               ContainerTitle(title: 'Discover'),
               CategoriesList(),
+              ContainerTitle(title: 'Best Foods Near You'),
+              BestFoodsNearYou(),
               ContainerTitle(title: 'Best Restaurant'),
-              SizedBox(height: 15),
               BestRestaurant(),
-              Container(
-                height: 100,
-                width: double.infinity,
-              )
+              SizedBox(height: 100),
             ],
           ),
         ),
