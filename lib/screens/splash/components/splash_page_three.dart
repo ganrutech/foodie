@@ -11,7 +11,7 @@ class SplashPageThree extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Stack(
-        overflow: Overflow.clip,
+        clipBehavior: Clip.hardEdge,
         alignment: AlignmentDirectional.center,
         children: [
           Column(
@@ -55,11 +55,8 @@ class SplashPageThree extends StatelessWidget {
                 children: [
                   Image.asset('assets/images/occassions.png'),
                   SizedBox(height: 50),
-                  RaisedButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    textColor: Colors.black87,
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: kSecondaryColor),
                     onPressed: press,
                     child: Container(
                       width: SizeConfig.screenWidth * 0.4,
@@ -69,12 +66,14 @@ class SplashPageThree extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.restaurant,
+                            color: kTextBlack,
                             size: getProportionateScreenWidth(18.0),
                           ),
                           SizedBox(width: 10),
                           Text(
                             'Let\'s Eat',
                             style: TextStyle(
+                              color: kTextBlack,
                               fontSize: getProportionateScreenWidth(18.0),
                             ),
                           ),

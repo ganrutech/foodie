@@ -11,7 +11,7 @@ class SplashPageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      overflow: Overflow.clip,
+      clipBehavior: Clip.hardEdge,
       alignment: AlignmentDirectional.center,
       children: [
         Positioned(
@@ -52,11 +52,8 @@ class SplashPageOne extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 50),
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  textColor: Colors.black87,
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: kSecondaryColor),
                   onPressed: press,
                   child: Container(
                     width: SizeConfig.screenWidth * 0.4,
@@ -67,11 +64,13 @@ class SplashPageOne extends StatelessWidget {
                         Text(
                           'Next',
                           style: TextStyle(
+                            color: kTextBlack,
                             fontSize: getProportionateScreenWidth(18.0),
                           ),
                         ),
                         Icon(
                           Icons.arrow_forward_ios,
+                          color: kTextBlack,
                           size: getProportionateScreenWidth(18.0),
                         )
                       ],

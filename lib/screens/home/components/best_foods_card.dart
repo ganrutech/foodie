@@ -22,7 +22,7 @@ class BestFoodsCard extends StatelessWidget {
         child: AspectRatio(
             aspectRatio: 0.88,
             child: Stack(
-              overflow: Overflow.clip,
+              clipBehavior: Clip.hardEdge,
               alignment: Alignment.bottomCenter,
               children: [
                 AspectRatio(
