@@ -8,7 +8,11 @@ import 'favorite_button.dart';
 class RatingBadge extends StatelessWidget {
   const RatingBadge({
     Key key,
+    @required this.rating,
+    @required this.overall,
   }) : super(key: key);
+
+  final String rating, overall;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +40,7 @@ class RatingBadge extends StatelessWidget {
                     children: [
                       SizedBox(width: 5.0),
                       Text(
-                        '4.5',
+                        rating,
                         style: TextStyle(
                           fontSize: 12,
                           color: Colors.white,
@@ -47,12 +51,12 @@ class RatingBadge extends StatelessWidget {
                       Icon(
                         Icons.star,
                         size: 14,
-                        color: Colors.yellow,
+                        color: kRatingYellow,
                       ),
                       SizedBox(width: 2.0),
                       Expanded(
                         child: Text(
-                          '(50+)',
+                          '($overall+)',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.white,

@@ -14,8 +14,8 @@ class ContainerTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.centerLeft,
-      margin: EdgeInsets.only(top: kDefaultValue),
-      padding: EdgeInsets.symmetric(horizontal: kDefaultValue),
+      padding: EdgeInsets.fromLTRB(
+          kDefaultValue, kDefaultValue, 0, kDefaultValue / 1.5),
       child: Text(
         title,
         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),

@@ -4,11 +4,12 @@ const kDefaultValue = 20.0;
 const kPrimaryColor = Color(0xFF8F8CDE);
 const kPrimaryLightColor = Color(0xFFCDCAF1);
 const kSecondaryColor = Color(0xFFFACC48);
-const kTextBlack = Color(0xFFF444444);
+const kTextBlack = Color(0xFFF171C09);
 const kTextBlackLight = Color(0xFFF383838);
 const kTextGrey = Color(0xFFFC3C3C3);
 const kTextLight = Color(0xFFFFCFCFC);
 const kCardBgGrey = Color(0xFFF2F2F2);
 const kBadgeColor = Color(0xFF716F86);
+const kRatingYellow = Color(0xFFFFCC01);
 
 const kAnimationDuration = Duration(milliseconds: 200);

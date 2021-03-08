@@ -52,28 +52,31 @@ class SplashPageOne extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 50),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: kSecondaryColor),
-                  onPressed: press,
-                  child: Container(
-                    width: SizeConfig.screenWidth * 0.4,
-                    padding: EdgeInsets.all(getProportionateScreenWidth(16.0)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Next',
-                          style: TextStyle(
-                            color: kTextBlack,
-                            fontSize: getProportionateScreenWidth(18.0),
+                Container(
+                  width: 200,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: kSecondaryColor),
+                    onPressed: press,
+                    child: Container(
+                      width: SizeConfig.screenWidth * 0.4,
+                      padding: EdgeInsets.all(16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Next',
+                            style: TextStyle(
+                              color: kTextBlack,
+                              fontSize: 18.0,
+                            ),
                           ),
-                        ),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                          color: kTextBlack,
-                          size: getProportionateScreenWidth(18.0),
-                        )
-                      ],
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            color: kTextBlack,
+                            size: 18.0,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

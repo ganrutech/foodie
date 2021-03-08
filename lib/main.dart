@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         builder: (context, intro, _) => MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Foodie',
-          theme: theme(),
+          theme: theme(context),
           home: intro.isVisited
               ? HomeScreen()
               : FutureBuilder(

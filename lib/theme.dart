@@ -21,24 +21,18 @@ Map<int, Color> color = {
   900: Color.fromRGBO(143, 140, 222, 1),
 };
 
-ThemeData theme() {
+ThemeData theme(BuildContext context) {
   return ThemeData(
+    fontFamily: 'Poppins',
     scaffoldBackgroundColor: kPrimaryColor,
-    textTheme: textTheme(),
     primaryColor: kPrimaryColor,
     primarySwatch: MaterialColor(0xFF8F8CDE, color),
+    textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextBlack),
+    colorScheme: ColorScheme.light(
+      primary: kPrimaryColor,
+      secondary: kSecondaryColor,
+    ),
     accentColor: kPrimaryColor,
-    fontFamily: 'Poppins',
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    buttonColor: kSecondaryColor,
-  );
-}
-
-TextTheme textTheme() {
-  return TextTheme(
-    bodyText1: TextStyle(color: kTextBlack),
-    bodyText2: TextStyle(color: kTextBlack),
-    button: TextStyle(color: kTextBlack),
-    headline6: TextStyle(color: kTextBlackLight),
   );
 }

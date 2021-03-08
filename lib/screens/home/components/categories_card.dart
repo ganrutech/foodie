@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../size_config.dart';
 import '../../../constants.dart';
 import '../../../models/categories.dart';
 
@@ -21,10 +20,9 @@ class CaterogiesCard extends StatelessWidget {
       children: [
         Container(
           child: Container(
-            width: getProportionateScreenWidth(70),
-            height: getProportionateScreenWidth(70),
+            width: 70,
+            height: 70,
             margin: EdgeInsets.only(
-              top: kDefaultValue / 2,
               right: kDefaultValue / 2.5,
             ),
             decoration: BoxDecoration(
@@ -62,7 +60,6 @@ class CaterogiesCard extends StatelessWidget {
           Positioned(
             right: 5,
             child: Container(
-              transform: Matrix4.translationValues(0, 4.0, 0),
               width: 16,
               height: 16,
               decoration: BoxDecoration(

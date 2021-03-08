@@ -41,23 +41,19 @@ class _CustomAppBarState extends State<CustomAppBar> {
           child: Center(
             child: Row(
               children: [
-                Expanded(
-                  flex: 1,
-                  child: InkWell(
-                    onTap: () {
-                      Provider.of<OnBoarding>(context, listen: false).logout();
-                    },
-                    child: Container(
-                      child: SvgPicture.asset(
-                        'assets/icons/menu.svg',
-                        width: 20,
-                        color: Colors.white,
-                      ),
+                InkWell(
+                  onTap: () {
+                    Provider.of<OnBoarding>(context, listen: false).logout();
+                  },
+                  child: Container(
+                    child: SvgPicture.asset(
+                      'assets/icons/menu.svg',
+                      width: 20,
+                      color: Colors.white,
                     ),
                   ),
                 ),
                 Expanded(
-                  flex: 6,
                   child: Center(
                     child: DropdownButton<String>(
                       elevation: 0,
@@ -89,8 +85,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     ),
                   ),
                 ),
-                Expanded(
-                  flex: 1,
+                Padding(
+                  padding: const EdgeInsets.only(right: kDefaultValue / 2),
                   child: Stack(
                     children: [
                       Container(
@@ -111,7 +107,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         ),
                       ),
                       Positioned(
-                        right: 10,
+                        right: 0,
                         child: Container(
                           transform: Matrix4.translationValues(0.0, -5.0, 0.0),
                           width: 10,

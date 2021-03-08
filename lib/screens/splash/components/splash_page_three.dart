@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
@@ -53,31 +53,36 @@ class SplashPageThree extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/images/occassions.png'),
+                  SvgPicture.asset(
+                    'assets/images/eating_together.svg',
+                    height: 250,
+                  ),
                   SizedBox(height: 50),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: kSecondaryColor),
-                    onPressed: press,
-                    child: Container(
-                      width: SizeConfig.screenWidth * 0.4,
-                      padding:
-                          EdgeInsets.all(getProportionateScreenWidth(16.0)),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.restaurant,
-                            color: kTextBlack,
-                            size: getProportionateScreenWidth(18.0),
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            'Let\'s Eat',
-                            style: TextStyle(
+                  Container(
+                    width: 200,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: kSecondaryColor),
+                      onPressed: press,
+                      child: Container(
+                        width: SizeConfig.screenWidth * 0.4,
+                        padding: EdgeInsets.all(16.0),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.restaurant,
                               color: kTextBlack,
-                              fontSize: getProportionateScreenWidth(18.0),
+                              size: 18.0,
                             ),
-                          ),
-                        ],
+                            SizedBox(width: 10),
+                            Text(
+                              'Let\'s Eat',
+                              style: TextStyle(
+                                color: kTextBlack,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
